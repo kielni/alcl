@@ -10,7 +10,7 @@
     "alexa",
     "echo",
     "amazon",
-    "aws-lambda",
+    "aws-lambda"
   ],
   "bin": {
     "alcl": "./index.js"

@@ -1,4 +1,6 @@
-# alcl - command line interface for Alexa Skill Lambda functions with alexa-app
+# alcl - Alexa Lambda CLI
+
+command line interface for Alexa Skill Lambda functions with alexa-app
 
 [New Alexa Skills Kit Template: Build a Trivia Skill in under an Hour](https://developer.amazon.com/public/community/post/TxDJWS16KUPVKO/New-Alexa-Skills-Kit-Template-Build-a-Trivia-Skill-in-under-an-Hou) ... just 17 easy manual steps.  
 

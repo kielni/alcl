@@ -1,0 +1,24 @@
+{
+  "name": "alcl",
+  "version": "1.0.0",
+  "description": "Command line interface for Alexa Skill Lambda functions with alexa-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alexa",
+    "echo",
+    "amazon",
+    "aws-lambda",
+  ],
+  "bin": {
+    "alcl": "./index.js"
+  },
+  "author": "Kimberly Nicholls",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "lodash": "^4.12.0"
+  }
+}

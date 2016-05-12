@@ -82,7 +82,7 @@ function exitOnError(cmd) {
 }
 
 function copyTemplate(filename, replace, dest) {
-    var template = fs.readFileSync('templates/'+filename, 'utf8');
+    var template = fs.readFileSync(__dirname+'/templates/'+filename, 'utf8');
     var out = dest+filename;
     console.log('copy templates/'+filename+' to '+out);
     var compiled = _.template(template);

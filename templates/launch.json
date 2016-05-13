@@ -1,0 +1,19 @@
+{
+  "session": {
+    "sessionId": "SessionId.${uuid}",
+    "application": {
+      "applicationId": "amzn1.echo-sdk-ams.app.${uuid}"
+    },
+    "user": {
+      "userId": "amzn1.ask.account.${userId}"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "LaunchRequest",
+    "requestId": "EdwRequestId.${uuid}",
+    "timestamp": "${timestamp}",
+    "locale": "en-US"
+  },
+  "version": "1.0"
+}

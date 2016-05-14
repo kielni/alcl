@@ -35,7 +35,7 @@ See also:
 
 - create package.json, index.js, and .gitignore files
 - install the [alexa-app](https://www.npmjs.com/package/alexa-app) npm package
-- create `create-function.json` and `update-function-code.json` config files in the `aws` subdirectory
+- create `create-function.json`, `update-function-code.json`, and `launch.json` config files in the `aws` subdirectory
 - create a Lambda function named `skillName` in us-east-1 with `aws lambda create-function`
 
 `skillName` is required
@@ -46,12 +46,45 @@ See also:
 
 Adding a Alexa Skills Kit event source doesn't seem to be supported through AWS CLI.  Set it up manually on https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions/_functionName_?tab=eventSources
 
+### setup config for a skill
+
+    alcl setup <skillName>
+
+- create `create-function.json`, `update-function-code.json`, and `launch.json` config files in the `aws` subdirectory
+
+Set up config files, but don't create skill template or new Lambda function.
+
 ### push updated code to AWS
 
-    alxl push --profile [profile]
+    alcl push --profile [profile]
 
 - zip the contents of the current directory, excluding `aws`
 - upload the code with `aws lambda update-function-code`
 
 `profile` use this AWS CLI profile (optional)
+
+### test a Lambda function
+
+    alcl test -f [filename] --profile [profile]
+
+- load request data from `filename` or `aws/launch.json`
+- POST request data to Lambda function with `aws lambda invoke`
+- decode and print log output
+- print function return value
+
+### get schema
+
+    alcl schema
+
+- print generated skill schema
+
+There's no API to update the skill schema (why?!).  Cut and paste this output into a text box on the Developer Console and click Save.
+
+### get utterances
+
+    alcl utterances
+
+- print generated skill utterances
+
+There's no API to update the skill utterances (why?!).  Cut and paste this output into a text box on the Developer Console and click Save.
 

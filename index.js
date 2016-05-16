@@ -5,7 +5,6 @@ var fs = require('fs'),
     child_process = require('child_process'),
     _ = require('lodash');
 
-// .command('rmdir <dir> [otherDirs...]')
 program
     .command('init <name>')
     .description('create a new Alexa skill: create alexa-app skill template and Lambda function')
@@ -29,6 +28,7 @@ program
         // skill skeleton
         copyTemplate('package.json', replace, cwd);
         copyTemplate('index.js', replace, cwd);
+        copyTemplate('lambda.js', replace, cwd);
         copyTemplate('.gitignore', replace, cwd);
         awsConfig(name);
         // install alexa-app

@@ -15,4 +15,4 @@ if (process.argv.length > 2) {
     }
 }
 
-exports.handler = app.lambda();
+module.exports = app;

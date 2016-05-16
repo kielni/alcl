@@ -9,7 +9,7 @@ Make some changes, make a zip file, open a browser, get dumped to login form, lo
 ## prerequisites
 
 - Node.js v4.3.2
-- AWS account
+- AWS account (http://docs.aws.amazon.com/lambda/latest/dg/setup.html)
 - [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
 - AWS CLI profile with permissions:
     - lambda:CreateFunction
@@ -33,7 +33,7 @@ See also:
 
     alcl init <skillName> -r <lambda_execution_role_ARN> --profile [profile]
 
-- create package.json, index.js, and .gitignore files
+- create package.json, index.js, lambda.js, and .gitignore files
 - install the [alexa-app](https://www.npmjs.com/package/alexa-app) npm package
 - create `create-function.json`, `update-function-code.json`, and `launch.json` config files in the `aws` subdirectory
 - create a Lambda function named `skillName` in us-east-1 with `aws lambda create-function`

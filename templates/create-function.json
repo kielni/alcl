@@ -1,6 +1,6 @@
 {
     "FunctionName": "${skillName}",
     "Runtime": "nodejs4.3",
-    "Handler": "index.handler",
+    "Handler": "lambda.handler",
     "MemorySize": 128
 }

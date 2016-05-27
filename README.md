@@ -88,3 +88,10 @@ There's no API to update the skill schema (why?!).  Cut and paste this output in
 
 There's no API to update the skill utterances (why?!).  Cut and paste this output into a text box on the Developer Console and click Save.
 
+### generate utterances
+
+    alcl generate-utter <skillName> <action>
+
+- generate a list of possible utterances for a skill name and action
+
+Generate possible utterances using the supported phrasings in [Invoking a Skill with a Specific Request](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/supported-phrases-to-begin-a-conversation).  Use this to explore the list of possible utterances for a skill and action and see which make sense.  Remember to quote multi-word skill names and actions.

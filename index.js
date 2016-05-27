@@ -153,6 +153,35 @@ program
         exitOnError('node index --utterances');
     });
 
+program
+    .command('generate-utter <skillName> <action>')
+    .description('generate possible utterances given a skill name and action')
+    .action(function(skillName, action, options) {
+        // from https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/supported-phrases-to-begin-a-conversation
+        var phrases = [
+            `${action} [by,from,in,using,with] ${skillName}`,
+            `ask ${skillName} [to,about,for,with,whether] ${action}`,
+            `ask ${skillName} ${action}`,
+            `ask ${skillName} [what,how] ...`,
+            `tell ${skillName} [to,that] ...`,
+            `[search,open] ${skillName} for ${action}`,
+            `[talk to,open,launch,start,resume,load,run,begin] ${skillName} for ${action}`,
+            `use ${skillName} [and,to,for] ${action}`
+        ];
+        var wordsExp = new RegExp(/\[(.*?)\]/);
+        phrases.forEach(function(phrase) {
+            var wordStr = phrase.match(wordsExp);
+            if (wordStr) {
+                wordStr[1].split(',').forEach(function(word) {
+                    console.log(phrase.replace(wordStr[0], word));
+                });
+            } else {
+                console.log(phrase);
+            }
+        });
+
+    });
+
 program.parse(process.argv);
 
 function awsOptions(options) {

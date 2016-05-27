@@ -1,6 +1,6 @@
 {
   "name": "alcl",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Command line interface for Alexa Skill Lambda functions with alexa-app",
   "repository": "https://github.com/kielni/alcl",
   "main": "index.js",

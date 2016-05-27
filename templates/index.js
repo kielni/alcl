@@ -5,6 +5,20 @@ app.launch(function(request, response) {
     response.say('hello ${skillName}');
 });
 
+app.intent('sampleIntent',
+    {
+        'slots': { 'WHEN': 'AMAZON.DATE' },
+        'utterances': [
+            'tell me about {-|WHEN}'
+        ]
+    },
+
+    function(request, response) {
+        response.say('${skillName} ', request.slot('name'));
+    }
+);
+
+
 if (process.argv.length > 2) {
     var arg = process.argv[2];
     if (arg === '-s' || arg === '--schema') {
